@@ -111,11 +111,6 @@
   outline: none;
   background-color: #f3f3f3;
 }
-.elon_date__bottom_box_mini_btn:hover {
-  background: #006AFF;
-  color: #fff;
-  transition: 0.3s ease;
-}
 
 .elon_date__bottom_box_right {
   margin-left: 30px;

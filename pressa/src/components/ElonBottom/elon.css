@@ -8,6 +8,10 @@
   margin-bottom: 128px;
 }
 
+.elon_btns_mini {
+  display: flex;
+}
+
 .elon_bottom-p {
   font-style: normal;
   font-weight: 500;
@@ -82,11 +86,7 @@ margin-bottom: 10px;
   border: none;
   outline: none;
   background-color: #f3f3f3;
-}
-.elon_btns_one:hover {
-  background: #006AFF;
-  color: #fff;
-  transition: 0.3s ease;
+
 }
 
 .elon_btns_one + .elon_btns_one {

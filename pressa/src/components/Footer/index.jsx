@@ -5,6 +5,7 @@ import Facebook from "../../assets/img/facebook.png";
 import Instagram from "../../assets/img/instagram.png";
 import Telegram from "../../assets/img/telegram.png";
 import "./footer.css";
+import { NavLink } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -24,9 +25,9 @@ export const Footer = () => {
           <div className="footer_right">
             <ul className="footer_list">
               <li className="footer_item">
-                <a href="#" className="footer_item_link">
+                <NavLink to="/biz" className="footer_item_link">
                   Biz haqimizda
-                </a>
+                </NavLink>
               </li>
               <li className="footer_item">
                 <a href="#" className="footer_item_link">

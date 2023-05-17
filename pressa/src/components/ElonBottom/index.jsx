@@ -14,15 +14,9 @@ export const ElonBottom = () => {
       <div className="elon_btns_box">
         <p className="elon_btn_p">Rasm yuklash</p>
         <div className="elon_btns_mini">
-          <button type="file" className="elon_btns_one">
-            Upload img
-          </button>
-          <button type="file" className="elon_btns_one">
-            Upload img
-          </button>
-          <button type="file" className="elon_btns_one">
-            Upload img
-          </button>
+          <input type="file" className="elon_btns_one" placeholder="upload img"/>
+          <input type="file" className="elon_btns_one" placeholder="upload img"/>
+          <input type="file" className="elon_btns_one" placeholder="upload img"/>
         </div>
         <p className="elon_btns_bottom_p">
           Yuklanyotgan rasm o’lchami 1080x1080 hajmi 2 mb dan oshmasin

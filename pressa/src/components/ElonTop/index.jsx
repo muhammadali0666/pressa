@@ -44,15 +44,14 @@ export const ElonTop = () => {
         <div className="elon_date__bottom_box_left">
           <p className="elon_date_bottom_select_p">Tadbir turi</p>
           <div className="elon_date__bottom_box_mini_inner">
-            <button className="elon_date__bottom_box_mini_btn">Online</button>
-            <button className="elon_date__bottom_box_mini_btn">Online</button>
+            {/* <button className="elon_date__bottom_box_mini_btn">Online</button> */}
+            <input type="text" className="elon_date__bottom_box_mini_btn" placeholder="Online | Offline"/>
+            {/* <button className="elon_date__bottom_box_mini_btn">Offline</button> */}
           </div>
         </div>
         <div className="elon_date__bottom_box_right">
           <p className="elon_date_bottom_select_p">Link kiriting</p>
-          <button style={{color: '#0085FF'}} className="elon_date__bottom_box_mini_btn">
-            https://www.youtube.com/liver24
-          </button>
+          <input style={{color: '#0085FF'}} className="elon_date__bottom_box_mini_btn" placeholder="https://www.youtube.com/liver24"/>
         </div>
       </div>
     </div>
