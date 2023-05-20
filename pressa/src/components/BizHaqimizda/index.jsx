@@ -14,8 +14,7 @@ export const Biz = () => {
               alt="img"
               className="biz_img"
               width={18}
-              height={18}
-            />
+              height={18}           />
             <p className="biz_top_p">Biz haqimizda</p>
           </div>
           <p className="biz_top_p_bottom">Biz haqimizda</p>

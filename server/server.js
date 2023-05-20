@@ -2,6 +2,7 @@ const express = require("express")
 const dotenv = require("dotenv")
 const cors = require("cors")
 const authRouter = require("./router/users.router")
+const addCard = require("./router/card.router")
 
 dotenv.config();
 const PORT = process.env.PORT || 4000;
@@ -13,6 +14,7 @@ app.use(express.json());
 
 /////////////////////// ROUTER
 app.use(authRouter)
+app.use(addCard)
 
 
 

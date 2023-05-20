@@ -11,10 +11,10 @@ import { Admin } from '../pages/Admin'
 export const RouteWrapper = () => {
   return (
     <Routes>
-      <Route path='/' element={<Home/>}/>
+      <Route path='/home' element={<Home/>}/>
       <Route path='/biz' element={<BizHaqimizda/>} />
       <Route path='/login' element={<Login/>}/>
-      <Route path='/register' element={<Register/>}/>
+      <Route path='/' element={<Register/>}/>
       <Route path='/elon' element={<ElonBerish/>}/>
       <Route path='/admin' element={<Admin/>}/>
       <Route path='*' element={<NotFound/>}/>

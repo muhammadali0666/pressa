@@ -6,6 +6,17 @@ import "./home.css"
 import { Smm } from "../../components/Smm";
 
 export const Home = () => {
+
+  // let getToken = localStorage.getItem("token");
+
+  // window.addEventListener("click", function (e) {
+  //   e.preventDefault();
+
+  //   if (!getToken) {
+  //     window.location.href = "/login";
+  //   }
+  // });
+
   return (
     <div>
       <Layouts>
@@ -14,19 +25,10 @@ export const Home = () => {
           <p className="card_text">Oxirgi e'lonlar</p>
           <div
             className="card_inner"
-            style={{ display: "flex", flexWrap: "wrap", marginBottom: "200px" }}
+            style={{ marginBottom: "200px" }}
           >
             <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
           </div>
-          <button className="card_btn">Ko’proq ko’rish</button>
         </div>
         <Smm/>
       </Layouts>

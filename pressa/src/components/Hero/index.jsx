@@ -11,7 +11,7 @@ export const Hero = () => {
           <ul className="hero_list">
             <li className="hero_item">
               <div className="hero_box">
-              <input type="date" className="hero_input" />
+                <input type="date" className="hero_input" />
               </div>
             </li>
             <li className="hero_item">
@@ -19,7 +19,11 @@ export const Hero = () => {
                 <option value="" className="hero_option">
                   Bo'limni tanlang
                 </option>
-                <option  style={{fontSize: "20px", color: "#000"}} value="" className="hero_option">
+                <option
+                  style={{ fontSize: "20px", color: "#000" }}
+                  value=""
+                  className="hero_option"
+                >
                   IT
                 </option>
                 <option value="" className="hero_option">
@@ -28,7 +32,11 @@ export const Hero = () => {
                 <option value="" className="hero_option">
                   Mobile dasturlash
                 </option>
-                <option style={{fontSize: "20px", color: "#000"}} value="" className="hero_option">
+                <option
+                  style={{ fontSize: "20px", color: "#000" }}
+                  value=""
+                  className="hero_option"
+                >
                   Dizayn
                 </option>
                 <option value="" className="hero_option">
@@ -37,7 +45,11 @@ export const Hero = () => {
                 <option value="" className="hero_option">
                   Grafik dizayn
                 </option>
-                <option style={{fontSize: "20px",color: "#000"}} value="" className="hero_option">
+                <option
+                  style={{ fontSize: "20px", color: "#000" }}
+                  value=""
+                  className="hero_option"
+                >
                   Biznes
                 </option>
                 <option value="" className="hero_option">
@@ -46,7 +58,11 @@ export const Hero = () => {
                 <option value="" className="hero_option">
                   Kredit va audit
                 </option>
-                <option style={{fontSize: "20px", color: "#000"}} value="" className="hero_option">
+                <option
+                  style={{ fontSize: "20px", color: "#000" }}
+                  value=""
+                  className="hero_option"
+                >
                   Ta'lim
                 </option>
                 <option value="" className="hero_option">

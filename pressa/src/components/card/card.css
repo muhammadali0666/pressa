@@ -1,3 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card_btn {
+  position: absolute;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+  background: #006AFF;
+  border-radius: 5px;
+  border: none;
+  padding: 15px 20px;
+  margin-bottom: 236px;
+  left: 45vw;
+}
+
 .card {
   max-width: 400px;
   background: #FFFFFF;
@@ -5,7 +25,7 @@
   margin-bottom: 70px;
 }
 
-.card + .card {
+.card {
   margin-left: 20px;
 }
 
@@ -51,6 +71,8 @@
 
 .card_bottom_box_left_item {
   display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .card_bottom_box_left_img {
@@ -63,6 +85,7 @@
   font-size: 18px;
   line-height: 21px;
   color: #333333;
+  margin-bottom: 0;
 }
 
 /* .card_bottom_box_right {} */
