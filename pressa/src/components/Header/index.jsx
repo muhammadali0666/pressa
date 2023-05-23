@@ -35,9 +35,9 @@ export const Header = () => {
               </NavLink>
             </li>
             <li className="header_item">
-              <a href="#" className="header_item_link">
+              <NavLink to='/single' className="header_item_link">
                 Savol va javoblar
-              </a>
+              </NavLink>
             </li>
             <li className="header_item">
              <NavLink to="/elon">

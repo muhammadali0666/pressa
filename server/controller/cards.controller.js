@@ -1,11 +1,14 @@
 const { Cards } = require("../model")
+const jwt = require("jsonwebtoken")
 
 Cards.sync({ force: false })
 
 const addCard = async (req, res) => {
-  const { img, title, fullname, profession, date, time, network, view } = req.body
+  const { title, fullname, profession, date, time, network, view, phoneNumber } = req.body
+  // const file = req.body.filename;
+  // console.log(file);
 
-  await Cards.create({ img, title, fullname, profession, date, time, network, view })
+  await Cards.create({ title, fullname, profession, date, time, network, view, phoneNumber })
 
   return res.send("added card!")
 
@@ -16,7 +19,39 @@ const getCards = async (_, res) => {
   res.send(getData)
 }
 
+const updateAnnouncement = async (req, res) => {
+  const { id, isApply} = req.body
+
+  const updatedUser = await Cards.update({ isApply }, {
+    returning: true,
+    plain: false,
+    where: {
+      id
+    }
+  })
+
+  return res.send(updatedUser.filter(e => e))
+
+}
+
+const updateActive = async (req, res) => {
+  const { id, isActive} = req.body
+
+  const updatedUser = await Cards.update({ isActive }, {
+    returning: true,
+    plain: false,
+    where: {
+      id
+    }
+  })
+
+  return res.send(updatedUser.filter(e => e))
+
+}
+
 module.exports = {
   addCard,
-  getCards
+  getCards,
+  updateAnnouncement,
+  updateActive
 }

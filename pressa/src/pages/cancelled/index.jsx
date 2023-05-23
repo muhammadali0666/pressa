@@ -2,15 +2,14 @@ import React from "react";
 import { Sidebar } from "../../components/Sidebar";
 import { SidebarHeader } from "../../components/SidebarHeader";
 import { AdminNavbar } from "../../components/adminNavbar";
-import { Notification } from "../../components/Notification";
-import "./admin.css"
+import { Cancel } from "../../components/Cancel";
 
-export const Admin = () => {
+export const Canceled = () => {
   return (
     <div className="container">
       <div className="admin_box" style={{ display: "flex" }}>
         <Sidebar />
-        <div className="admin_box_inner">
+        <div className="admin_box_inner" style={{ marginLeft: "47px" }}>
           <SidebarHeader />
           <AdminNavbar />
           <p
@@ -26,7 +25,7 @@ export const Admin = () => {
           >
             Eng so’ngi xabarnomalar
           </p>
-          <Notification/>
+          <Cancel/>
         </div>
       </div>
     </div>

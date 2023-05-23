@@ -31,6 +31,17 @@ const Cards = sequelize.define("cards", {
   view: {
     type: DataTypes.INTEGER,
     defaultValue: 2555
+  },
+  phoneNumber: {
+    type: DataTypes.INTEGER
+  },
+  isApply: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+  },
+  isActive: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: true,
   }
 })
 

@@ -24,6 +24,19 @@ export const ElonBerish = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [network, setNetwork] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  // const [selectedFile, setSelectedFile] = useState(null);
+
+  
+  // const handleFileInputChange = (event) => {
+    //     setSelectedFile(event.target.files[0]);
+    // }
+    
+  //   const formData = new FormData();
+  // formData.append('file', selectedFile);
+  // formData.append('upload_preset', "chatImages")
+
+  // console.log(formData);
 
   const handleData = (e) => {
     e.preventDefault();
@@ -34,7 +47,8 @@ export const ElonBerish = () => {
       profession: profession,
       date: date,
       time: time,
-      network: network
+      network: network,
+      phoneNumber: phoneNumber,
     };
 
     fetch("http://localhost:4001/card", {
@@ -47,22 +61,22 @@ export const ElonBerish = () => {
       .then((res) => res.json())
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
-      alert("added card")
-      window.location.href = "http://localhost:5173/home"
+    alert("added card");
+    window.location.href = "http://localhost:5173/home";
   };
 
   const handleCancel = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setTitle("")
-    setFullname("")
-    setProfession("")
-    setDate("")
-    setTime("")
-    setNetwork("")
-    alert("Canceled")
-  }
-
+    setTitle("");
+    setFullname("");
+    setProfession("");
+    setDate("");
+    setTime("");
+    setNetwork("");
+    setPhoneNumber("");
+    alert("Canceled");
+  };
 
   return (
     <Layouts>
@@ -137,6 +151,18 @@ export const ElonBerish = () => {
                       <option value="" className="elon_date_middle_option">
                         Java developer
                       </option>
+                      <option value="" className="elon_date_middle_option">
+                        JS developer
+                      </option>
+                      <option value="" className="elon_date_middle_option">
+                        PY developer
+                      </option>
+                      <option value="" className="elon_date_middle_option">
+                        TS developer
+                      </option>
+                      <option value="" className="elon_date_middle_option">
+                        SMM maneger
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -205,7 +231,7 @@ export const ElonBerish = () => {
                     id="tashkilot3"
                     type="tel"
                     className="tashkilotchi_input"
-                    placeholder="+998"
+                    placeholder="90 *** ** **"
                   />
                 </div>
               </div>
@@ -218,7 +244,7 @@ export const ElonBerish = () => {
                     id="tashkilot4"
                     type="text"
                     className="tashkilotchi_input"
-                    placeholder="Muhammadali"
+                    placeholder="Muhammadali Shuhratjonov"
                     value={fullname}
                     onChange={(e) => setFullname(e.target.value)}
                     required
@@ -232,7 +258,10 @@ export const ElonBerish = () => {
                     id="tashkilot5"
                     type="tel"
                     className="tashkilotchi_input"
-                    placeholder="+998"
+                    placeholder="90 *** ** **"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -262,6 +291,10 @@ export const ElonBerish = () => {
                   type="file"
                   className="elon_btns_one"
                   placeholder="upload img"
+                  // value={selectedFile}
+                  // onChange={(e) => setSelectedFile(e.target.files[0])}
+                  // onChange={(e) => handleFileInputChange(e)}
+                  accept='.txt, .jfif, .jpeg, .png, *'
                 />
                 <input
                   type="file"
@@ -292,7 +325,13 @@ export const ElonBerish = () => {
             </div>
 
             <div className="elon_send_box">
-              <button className="elon_send_btn" onClick={handleCancel} type="button">Bekor qilish</button>
+              <button
+                className="elon_send_btn"
+                onClick={handleCancel}
+                type="button"
+              >
+                Bekor qilish
+              </button>
               <button className="elon_send_btn" type="submit">
                 E’lonni yuborish
               </button>

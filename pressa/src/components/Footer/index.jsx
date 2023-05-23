@@ -30,9 +30,9 @@ export const Footer = () => {
                 </NavLink>
               </li>
               <li className="footer_item">
-                <a href="#" className="footer_item_link">
+                <NavLink to="/single" className="footer_item_link">
                   Savol va Javoblar
-                </a>
+                </NavLink>
               </li>
             </ul>
 

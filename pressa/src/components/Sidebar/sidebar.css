@@ -4,6 +4,8 @@
   height: 100vh;
   padding-left: 30px;
   padding-top: 18px;
+  position: fixed;
+  top: 0;
 }
 
 .sidebar_logo {
@@ -32,6 +34,7 @@
   line-height: 17px;
   color: #FFFFFF;
   display: flex;
+  align-items: center;
 }
 
 .sidebar_img {
@@ -44,6 +47,7 @@
   font-size: 18px;
   line-height: 17px;
   color: #FFFFFF;
+  margin-bottom: 0;
 }
 
 .sidebar_bottom_p {

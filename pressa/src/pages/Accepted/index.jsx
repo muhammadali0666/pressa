@@ -1,16 +1,17 @@
+import "./accepted.css"
+
 import React from "react";
 import { Sidebar } from "../../components/Sidebar";
 import { SidebarHeader } from "../../components/SidebarHeader";
 import { AdminNavbar } from "../../components/adminNavbar";
-import { Notification } from "../../components/Notification";
-import "./admin.css"
+import { QabulQilingan } from "../../components/QabulQilingan";
 
-export const Admin = () => {
+export const Accepted = () => {
   return (
     <div className="container">
       <div className="admin_box" style={{ display: "flex" }}>
         <Sidebar />
-        <div className="admin_box_inner">
+        <div className="admin_box_inner" style={{ marginLeft: "47px" }}>
           <SidebarHeader />
           <AdminNavbar />
           <p
@@ -26,7 +27,7 @@ export const Admin = () => {
           >
             Eng so’ngi xabarnomalar
           </p>
-          <Notification/>
+          <QabulQilingan/>
         </div>
       </div>
     </div>
