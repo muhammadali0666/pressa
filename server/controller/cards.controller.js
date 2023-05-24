@@ -1,14 +1,13 @@
 const { Cards } = require("../model")
 const jwt = require("jsonwebtoken")
+const { Op } = require("sequelize")
 
 Cards.sync({ force: false })
 
 const addCard = async (req, res) => {
-  const { title, fullname, profession, date, time, network, view, phoneNumber } = req.body
-  // const file = req.body.filename;
-  // console.log(file);
+  const { title, fullname, profession, date, time, network, view, phoneNumber, img } = req.body
 
-  await Cards.create({ title, fullname, profession, date, time, network, view, phoneNumber })
+  await Cards.create({ title, fullname, profession, date, time, network, view, phoneNumber, img })
 
   return res.send("added card!")
 
@@ -20,7 +19,7 @@ const getCards = async (_, res) => {
 }
 
 const updateAnnouncement = async (req, res) => {
-  const { id, isApply} = req.body
+  const { id, isApply } = req.body
 
   const updatedUser = await Cards.update({ isApply }, {
     returning: true,
@@ -35,7 +34,7 @@ const updateAnnouncement = async (req, res) => {
 }
 
 const updateActive = async (req, res) => {
-  const { id, isActive} = req.body
+  const { id, isActive } = req.body
 
   const updatedUser = await Cards.update({ isActive }, {
     returning: true,
@@ -46,12 +45,27 @@ const updateActive = async (req, res) => {
   })
 
   return res.send(updatedUser.filter(e => e))
+}
 
+const Search = async (req, res) => {
+  const { date } = req.body;
+
+  const result = await Cards.findAll({
+    where: {
+      [Op.or]: [
+        // { fullname },
+        { date }
+      ]
+    }
+  })
+    .catch(err => console.log(err))
+  return res.send(result)
 }
 
 module.exports = {
   addCard,
   getCards,
   updateAnnouncement,
-  updateActive
+  updateActive,
+  Search
 }

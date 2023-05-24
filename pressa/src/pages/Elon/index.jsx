@@ -25,45 +25,78 @@ export const ElonBerish = () => {
   const [time, setTime] = useState("");
   const [network, setNetwork] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  // const [selectedFile, setSelectedFile] = useState(null);
 
-  
-  // const handleFileInputChange = (event) => {
-    //     setSelectedFile(event.target.files[0]);
-    // }
-    
-  //   const formData = new FormData();
-  // formData.append('file', selectedFile);
-  // formData.append('upload_preset', "chatImages")
+  //////////////////////////////////////////////////////////
 
-  // console.log(formData);
+  const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleData = (e) => {
+  const handleFileInputChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const handleUploadImage = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+    formData.append("upload_preset", "chatImages");
 
-    let data = {
-      title: title,
-      fullname: fullname,
-      profession: profession,
-      date: date,
-      time: time,
-      network: network,
-      phoneNumber: phoneNumber,
-    };
-
-    fetch("http://localhost:4001/card", {
+    fetch("https://api.cloudinary.com/v1_1/dev4pmh5c/image/upload", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+      body: formData,
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((response) => response.json())
+      .then((data) => {
+        fetch("http://localhost:4001/card", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            token: localStorage.getItem("token"),
+          },
+          body: JSON.stringify({
+            img: data.url,
+            title: title,
+            fullname: fullname,
+            profession: profession,
+            date: date,
+            time: time,
+            network: network,
+            phoneNumber: phoneNumber,
+          }),
+        });
+      })
       .catch((error) => console.log(error));
-    alert("added card");
+      alert("added card");
     window.location.href = "http://localhost:5173/home";
   };
+
+  //////////////////////////////////////////////////////////
+
+  // const handleData = (e) => {
+  //   e.preventDefault();
+
+  //   let data = {
+  //     title: title,
+  //     fullname: fullname,
+  //     profession: profession,
+  //     date: date,
+  //     time: time,
+  //     network: network,
+  //     phoneNumber: phoneNumber,
+  //   };
+
+  //   fetch("http://localhost:4001/card", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data))
+  //     .catch((error) => console.log(error));
+  //   alert("added card");
+  //   window.location.href = "http://localhost:5173/home";
+  // };
 
   const handleCancel = (e) => {
     e.preventDefault();
@@ -88,7 +121,7 @@ export const ElonBerish = () => {
             flexDirection: "column",
             alignItems: "center",
           }}
-          onSubmit={handleData}
+          onSubmit={handleUploadImage}
         >
           <div className="elon">
             <div className="elon_inner">
@@ -294,17 +327,8 @@ export const ElonBerish = () => {
                   // value={selectedFile}
                   // onChange={(e) => setSelectedFile(e.target.files[0])}
                   // onChange={(e) => handleFileInputChange(e)}
-                  accept='.txt, .jfif, .jpeg, .png, *'
-                />
-                <input
-                  type="file"
-                  className="elon_btns_one"
-                  placeholder="upload img"
-                />
-                <input
-                  type="file"
-                  className="elon_btns_one"
-                  placeholder="upload img"
+                  accept=".txt, .jfif, .jpeg, .png"
+                  onChange={(e) => handleFileInputChange(e)}
                 />
               </div>
               <p className="elon_btns_bottom_p">

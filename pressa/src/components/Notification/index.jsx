@@ -57,7 +57,7 @@ export const Notification = () => {
       {data.length &&
         data.map(
           (e, idx) =>
-            e.isApply === false && (
+            e.isApply === false && e.isActive === true && (
               <>
                 <div key={idx} className="notification">
                   <div className="notification_box">

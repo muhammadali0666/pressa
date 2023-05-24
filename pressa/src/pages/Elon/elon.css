@@ -334,11 +334,11 @@ color: #000000;
   line-height: 17px;
   padding: 17px;
   border-radius: 3px;
-  color: #000;
+  color: #000000;
   border: none;
   outline: none;
   background-color: #f3f3f3;
-
+opacity: 0.7;
 }
 
 .elon_btns_one+.elon_btns_one {

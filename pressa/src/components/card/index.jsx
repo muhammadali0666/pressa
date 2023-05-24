@@ -28,10 +28,10 @@ export const Card = () => {
                   <div className="card_inner">
                     <div className="card_box">
                       <img
-                        src={CardImg}
-                        alt="card"
+                        src={e.img}
+                        alt="card img"
                         className="card_img"
-                        width={398}
+                        width={397}
                         height={417}
                         style={{ borderRadius: "4px" }}
                       />

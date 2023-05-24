@@ -30,7 +30,7 @@ export const SidebarHeader = () => {
           height={44}
         />
         <span className="admin_span">
-          <p className="admin_header_p">Abbos Janizakov</p>
+          <p className="admin_header_p">Habib Nurmagamedov</p>
           <p className="admin_header_p_next">id:12432</p>
         </span>
       </div>
